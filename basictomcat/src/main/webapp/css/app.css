@@ -1,0 +1,7 @@
+﻿article h1 {
+	font-size: 18pt;
+	color: #369;
+}
+article p strong { 
+	color: #f00; background-color: #ff0; 
+}
