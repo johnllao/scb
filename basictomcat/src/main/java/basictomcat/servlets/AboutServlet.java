@@ -16,14 +16,14 @@ public class AboutServlet extends HttpServlet{
 	
 	public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException {
 		
-		final String[] author = req.getParameterValues("author");
+		final String author = req.getParameter("author");
 			
 		res.setHeader("Content-type", "text/plain");
 		
 		final PrintWriter writer = res.getWriter();
 		writer.println("Servlet Demo");
 		writer.println("version 1.0.0");
-		writer.printf("author: %s\n", author == null || author[0] == null ? "none" : author[0]);
+		writer.printf("author: %s\n", author == null ? "none" : author);
 		
 		writer.flush();
 	}
