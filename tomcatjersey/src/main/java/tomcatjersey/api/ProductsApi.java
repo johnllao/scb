@@ -26,7 +26,7 @@ public class ProductsApi {
 		List<Map<String, Object>> result = new ArrayList<Map<String, Object>>(); 
 		try (Database db = Database.create(CONNECTION_URL) ) {
 			
-			result = db.<Map<String, Object>>query("select ProductID, ProductName from dbo.Products", 
+			result = db.<Map<String, Object>>query("select ProductID, ProductName, UnitPrice from dbo.Products ", 
 					new RecordFactory<Map<String, Object>>() {
 
 						@Override
@@ -35,6 +35,7 @@ public class ProductsApi {
 							final Map<String, Object> r = new HashMap<String, Object>();
 							r.put("id", resultSet.getInt("ProductID"));
 							r.put("name", resultSet.getString("ProductName"));
+							r.put("price", resultSet.getDouble("UnitPrice"));
 							
 							return r;
 						} 
