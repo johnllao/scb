@@ -18,11 +18,11 @@ public class HelpServlet extends HttpServlet {
 
 	public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
 		
-		final String[] name = req.getParameterValues("name");
+		final String[] topics = { "configuration", "accounts"};
 		final ServletContext ctx = req.getServletContext();
-		ctx.setAttribute("name", name == null || name[0] == null ? "none" : name[0]);
+		ctx.setAttribute("topics", topics);
 		
-		final RequestDispatcher dispatcher = req.getRequestDispatcher("help.jsp");
+		final RequestDispatcher dispatcher = ctx.getRequestDispatcher("/help.jsp");
 		dispatcher.forward(req, res);
 		
 	}

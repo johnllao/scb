@@ -7,7 +7,13 @@
 </head>
 <body>
 	<div>
-		Welcome! <%= this.getServletContext().getAttribute("name") %>
+		<p>Topics</p>
+		<ul>
+			<% final String[] topics = (String[]) this.getServletContext().getAttribute("topics"); %>
+			<% for (String topic : topics) {%>
+			<li><%= topic %></li>
+			<% } %>
+		</ul>
 	</div>
 </body>
 </html>
