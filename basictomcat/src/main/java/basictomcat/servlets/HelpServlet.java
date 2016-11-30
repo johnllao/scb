@@ -1,9 +1,9 @@
 package basictomcat.servlets;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -19,7 +19,8 @@ public class HelpServlet extends HttpServlet {
 	public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
 		
 		final String[] name = req.getParameterValues("name");
-		req.getServletContext().setAttribute("name", name == null || name[0] == null ? "none" : name[0]);
+		final ServletContext ctx = req.getServletContext();
+		ctx.setAttribute("name", name == null || name[0] == null ? "none" : name[0]);
 		
 		final RequestDispatcher dispatcher = req.getRequestDispatcher("help.jsp");
 		dispatcher.forward(req, res);
