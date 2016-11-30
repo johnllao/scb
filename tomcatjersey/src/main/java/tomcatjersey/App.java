@@ -9,6 +9,7 @@ public class App extends ResourceConfig {
 	
 	public App() {
 		packages("tomcatjersey.api");
+		register(JsonContextResolver.class);
 	}
 	
 }
