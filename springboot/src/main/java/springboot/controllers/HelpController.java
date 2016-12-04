@@ -9,8 +9,13 @@ public class HelpController {
 
 	@RequestMapping("/help")
 	public String index(Model model) {
-		model.addAttribute("header", "Welcome!");
+		model.addAttribute("header", "Help");
 		return "help";
 	}
 	
+	@RequestMapping("/help/endpoints")
+	public String helpEndPoints(Model model) {
+		model.addAttribute("header", "Help - Endpoints");
+		return "help/endpoints";
+	}
 }
