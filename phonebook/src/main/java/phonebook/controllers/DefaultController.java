@@ -9,6 +9,7 @@ public class DefaultController {
 
 	@RequestMapping("/")
 	public String index(Model model) {
+		//select id, name, tel, mobile, email, address, city, country, postal_code from friends
 		return "index";
 	}
 	
