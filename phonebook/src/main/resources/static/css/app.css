@@ -1,3 +1,9 @@
 body {
 	margin: 5px;
 }
+.friend {
+	padding-top: 10px;
+}
+.property {
+	font-weight: bold;
+}

@@ -4,7 +4,11 @@
 	
 	app.controller('controller', ['$http', '$scope', function(http, model) { 
 		
-		model.message = 'welcome';
+		http.get('/api/friends').then(function(res) { 
+		
+			model.friends = res.data;
+			
+		});
 		
 	}]);
 	
