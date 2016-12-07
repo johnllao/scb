@@ -6,21 +6,21 @@
 	<nav th:replace="layouts/head :: nav"></nav>
 	<div class="container" ng-controller="controller">
 		<div class="row">
-			<div class="col-lg-4 col-sm-12 friend" ng-repeat="friend in friends">
+			<div class="col-md-4 col-xs-12 friend" ng-repeat="friend in friends">
 				<h4>{{ friend.name }}</h4>
-				<p>{{ friend.address}}</p>
-				<p>{{ friend.city}}, {{ friend.country }} {{ friend.postalCode }}</p>
+				<p class="address">{{ friend.address}}</p>
+				<p class="address">{{ friend.city}}, {{ friend.country }} {{ friend.postalCode }}</p>
 				<div class="row">
-					<div class="col-lg-4 col-sm-12 property">tel</div>
-					<div class="col-lg-8 col-sm-12">{{ friend.tel }}</div>
+					<div class="col-md-4 col-xs-3 property">tel</div>
+					<div class="col-md-8 col-xs-9">{{ friend.tel }}</div>
 				</div>
 				<div class="row">
-					<div class="col-lg-4 col-sm-12 property">mobile</div>
-					<div class="col-lg-8 col-sm-12">{{ friend.mobile }}</div>
+					<div class="col-md-4 col-xs-3 property">mobile</div>
+					<div class="col-md-8 col-xs-9">{{ friend.mobile }}</div>
 				</div>
 				<div class="row">
-					<div class="col-lg-4 col-sm-12 property">email</div>
-					<div class="col-lg-8 col-sm-12">{{ friend.email }}</div>
+					<div class="col-md-4 col-xs-3 property">email</div>
+					<div class="col-md-8 col-xs-9">{{ friend.email }}</div>
 				</div>
 			</div>
 		</div>

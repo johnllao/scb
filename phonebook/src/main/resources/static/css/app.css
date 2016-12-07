@@ -4,6 +4,10 @@ body {
 .friend {
 	padding-top: 10px;
 }
+.address {
+	margin: 0 !important;
+	padding: 0 !important;
+}
 .property {
 	font-weight: bold;
 }
