@@ -3,7 +3,37 @@
 <head th:replace="layouts/head :: head">
 </head>
 <body>
-	<nav th:replace="layouts/head :: nav"></nav>
+	<nav class="navbar navbar-inverse">
+		<div class="container">
+			
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-menu" aria-expanded="false">
+        			<span class="sr-only">Toggle navigation</span>
+        			<span class="icon-bar"></span>
+        			<span class="icon-bar"></span>
+        			<span class="icon-bar"></span>
+      			</button>
+				<a class="navbar-brand" href="#">Phonebook</a>
+			</div>
+			
+			<div class="collapse navbar-collapse" id="nav-menu">
+			
+				<form class="navbar-form navbar-right">
+        			<div class="form-group">
+          				<input type="text" class="form-control" placeholder="Search" />
+        			</div>
+        			<button type="button" class="btn btn-primary btn-md">
+						<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+					</button>
+					<button type="button" class="btn btn-success btn-md" data-toggle="modal" data-target="#friendModal">
+						<span class="glyphicon glyphicon-file" aria-hidden="true"></span>
+					</button>
+      			</form>
+				
+			</div>
+			
+		</div>
+	</nav>
 	<div class="container" ng-controller="controller">
 		<div class="row">
 			<div class="col-md-4 col-xs-12 friend" ng-repeat="friend in friends">
@@ -22,9 +52,89 @@
 					<div class="col-md-4 col-xs-3 property">email</div>
 					<div class="col-md-8 col-xs-9">{{ friend.email }}</div>
 				</div>
+				<div class="row">
+					<div class="col-md-12 col-xs-12 text-right">
+						<button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#friendModal">
+							<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+						</button>
+						<button type="button" class="btn btn-danger btn-xs">
+  							<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+						</button>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
+	
+	<!-- Modal -->
+	
+	<div class="modal fade" id="friendModal" tabindex="-1" role="dialog" aria-labelledby="friendModalLabel">
+  		<div class="modal-dialog" role="document">
+    		<div class="modal-content">
+      			<div class="modal-header">
+        			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        				<span aria-hidden="true">&times;</span>
+        			</button>
+        			<h4 class="modal-title" id="friendModalLabel">Friend</h4>
+      			</div>
+      			<div class="modal-body">
+      			
+        			<form class="form-horizontal">
+        			
+  						<div class="form-group">
+    						<label for="txtName" class="col-md-2 col-xs-12 control-label">Name</label>
+    						<div class="col-md-10 col-xs-12">
+      							<input type="text" class="form-control" id="txtName" />
+    						</div>
+  						</div>
+  						
+  						<div class="form-group">
+    						<label for="txtAddress" class="col-md-2 col-xs-12 control-label">Address</label>
+    						<div class="col-md-10 col-xs-12">
+      							<input type="text" class="form-control" id="txtAddress" />
+    						</div>
+  						</div>
+  						
+  						<div class="form-group">
+    						<label for="txtCity" class="col-md-2 col-xs-12 control-label">City</label>
+    						<div class="col-md-4 col-xs-12">
+      							<input type="text" class="form-control" id="txtCity" />
+    						</div>
+    						<label for="txtCountry" class="col-md-2 col-xs-12 control-label">Country</label>
+    						<div class="col-md-4 col-xs-12">
+      							<input type="text" class="form-control" id="txtCountry" />
+    						</div>
+  						</div>
+  						
+  						<div class="form-group">
+    						<label for="txtTel" class="col-md-2 col-xs-12 control-label">Tel</label>
+    						<div class="col-md-4 col-xs-12">
+      							<input type="text" class="form-control" id="txtTel" />
+    						</div>
+    						<label for="txtMobile" class="col-md-2 col-xs-12 control-label">Mobile</label>
+    						<div class="col-md-4 col-xs-12">
+      							<input type="text" class="form-control" id="txtMobile" />
+    						</div>
+  						</div>
+  						
+  						<div class="form-group">
+    						<label for="txtEmail" class="col-md-2 col-xs-12 control-label">Email</label>
+    						<div class="col-md-10 col-xs-12">
+      							<input type="email" class="form-control" id="txtEmail" />
+    						</div>
+  						</div>
+  						
+					</form>
+					
+      			</div>
+      			<div class="modal-footer">
+        			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        			<button type="button" class="btn btn-primary">Save changes</button>
+      			</div>
+    		</div>
+  		</div>
+	</div>
+	
 	<script type="text/javascript" src="/js/app/index.js"></script>
 </body>
 </html>
