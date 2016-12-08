@@ -13,7 +13,7 @@ import phonebook.repositories.FriendsRepository;
 @RequestMapping(value="api")
 public class FriendsApi {
 
-	@Autowired
+	@Autowired	
 	private FriendsRepository repo;
 	
 	@RequestMapping(value="friends", method=RequestMethod.GET)
