@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org" ng-app="app">
 <head th:replace="layouts/head :: head">
 </head>
-<body>
+<body ng-controller="controller">
 	<nav class="navbar navbar-inverse">
 		<div class="container">
 			
@@ -20,10 +20,10 @@
 			
 				<form class="navbar-form navbar-right">
         			<div class="form-group">
-          				<input type="text" class="form-control" placeholder="Search" />
+          				<input type="text" class="form-control" placeholder="Search" ng-model="q"/>
         			</div>
         			<button type="button" class="btn btn-primary btn-md">
-						<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+						<span class="glyphicon glyphicon-search" aria-hidden="true" ng-click="search()"></span>
 					</button>
 					<button type="button" class="btn btn-success btn-md" data-toggle="modal" data-target="#friendModal">
 						<span class="glyphicon glyphicon-file" aria-hidden="true"></span>
@@ -34,7 +34,7 @@
 			
 		</div>
 	</nav>
-	<div class="container" ng-controller="controller">
+	<div class="container">
 		<div class="row">
 			<div class="col-md-4 col-xs-12 friend" ng-repeat="friend in friends">
 				<h4>{{ friend.name }}</h4>
